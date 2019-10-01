@@ -43,7 +43,6 @@ def fun():
         elif(len(e2.get())==0):
             showerror('Warning',"Box is Empty! Write username and password Correctly")
         else:
-            #root1.destroy()
             showinfo('sucess','login Succesfully')
             root2=Toplevel()
             root2.title('Movie Ticket Booking')
@@ -187,7 +186,6 @@ def fun():
     Button(root1,text='Login',width=10,height=2,bg="yellow",command=fun2,bd=5).grid(row=6,column=5)
 
       
-    #root1.mainloop()
 def newfun():
     global j1
     global j
@@ -203,14 +201,12 @@ def newfun():
     j=Entry(root6,text='Arial 20 bold',bd=5,width=30)
     j.pack()
     Label(root6,font='times 15 bold',bg='maroon').pack()
-    #j=check.get()
     def newfun2():
         root7=Tk()
         root7.geometry('400x400')
         root7.title('ENTERTANER')
         root7.config(background='maroon')
         j1=j.get()
-        #con=sqlite3.Connection('Project10.db')
         cur=con.cursor()
         cur.execute("select * from login19 where password is (?)",(j1,))
         x=cur.fetchall()
